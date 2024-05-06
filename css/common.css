@@ -1,0 +1,35 @@
+body, html {
+    min-height: 100%;
+    font-family: sans-serif;
+    font-weight: 200;
+    width: 100%;
+    background-color: lightblue;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: lightcoral;
+    justify-content: center;
+    height: 150px;
+    border-radius: 2px solid black;
+    margin-top: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgreen;
+}
+
+nav {
+    background-color: lightskyblue;
+}
+
+main {
+    background-color: lightgray;
+}
+
+footer {
+    background-color: lightyellow;
+}
