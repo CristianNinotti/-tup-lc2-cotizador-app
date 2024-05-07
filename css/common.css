@@ -1,35 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
     min-height: 100%;
     font-family: sans-serif;
     font-weight: 200;
     width: 100%;
-    background-color: lightblue;
+    padding: 10px;
+    margin: 0px;
+    background-color: lightgrey;
+}
+
+.contenedor-principal{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    border: solid black 1px;
+    background-color: white;
+}
+
+
+.contenedor-general {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
 }
 
 header {
+    background-color: rgb(247,203,172);
     display: flex;
     width: 100%;
-    background-color: lightcoral;
     justify-content: center;
+    align-items: center;
     height: 150px;
     border-radius: 2px solid black;
     margin-top: 0;
+    border-radius: 30px
+
 }
 
-section {
+.nav-bar {
+    display: flex;
+    width: 100%;
+    height: 35em;
+    padding: 10px 0 10px 0;
+    gap: 10px;
+
+}
+
+.lateral {
+    background-color: rgb(189,215,238);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 0.75;
+    border-radius: 15px;
+}
+
+.contenido-central{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 4;
+
+}
+
+.migas-pan {
     background-color: lightgreen;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 2em;
+    border-radius: 30px;
+    flex: 2;
 }
-
-nav {
-    background-color: lightskyblue;
-}
-
 main {
-    background-color: lightgray;
+    background-color: lightsalmon;
+    display: flex;
+    flex: 50;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+
 }
 
 footer {
-    background-color: lightyellow;
+    background-color: rgb(254,229,153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 225px;
+    border-radius:  15px;
 }
+
