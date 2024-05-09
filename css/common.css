@@ -38,7 +38,11 @@ body, html {
 }
 
 header {
-    background-color: rgb(247,203,172);
+    background-image: url(../img/pngtree-d-render-illustrating-concepts-of-accounting-and-financial-management-in-business-image_3737899.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -49,6 +53,24 @@ header {
     border-radius: 30px
 
 }
+
+header p{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px 15px 0px;
+    font-size: 2em;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    height: 40%;
+    padding: 15px 0px 15px 0px;
+
+}
+
+
 
 .nav-bar {
     display: flex;
