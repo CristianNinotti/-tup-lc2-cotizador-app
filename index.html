@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizador de Monedas</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="icon" type="image/svg+xml" href="../icon/coins-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
+
 <body>
     <div class="contenedor-general">
         <div class="contenedor-principal">
@@ -18,13 +21,39 @@
             <div class="nav-bar">
                 <section class="lateral">
                     <ul>
-                        <li class="inicio">Inicio</li>
-                        <li>Mi Archivo</li>
-                        <li>Informes</li>
-                        <li>Contáctenos</li>
+                        <li class="li-inicio">
+                                <a class="a-inicio" href="#">
+                                <i class="fa-solid fa-house"></i>
+                                <p> Inicio </p>
+                                </a>
+                        </li>
+                        <li>
+                                <a href="#">
+                                <i class="fa-solid fa-folder"></i>
+                                <p> Mi Archivo</p>
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="fa-solid fa-file"></i>
+                            <p>Informes</p>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="#"> 
+                            <i class="fa-regular fa-address-card"></i>
+                        <p>Contáctenos</p>
+                            </a>        
+                        </li>  
                     </ul>
                     <div class="opinion">
-                        Opinion
+                        <div class="opinion-img">
+                        <img src="../img/Screenshot_1.jpg" alt="Nahuel">
+                        </div>
+                        <div class="opinion-nombre">
+                        <h2>Nahuel Gonzalez</h2>
+                        <p>Sigan, sigan boludeando que nosotros estamos en bolas.</p>
+                        </div>
                     </div>
                 </section>
                 <div class="contenido-central">
@@ -35,9 +64,46 @@
                 </div>
             </div>
             <footer>
-                <b>Pie de pagina</b>
+                <div class="footer-lista">
+                    <ul>
+                        <li><h4>INSTITUCIONAL</h4></li>
+                        <li>¿Quíenes somos?</li>
+                        <li>Socios entratégicos</li>
+                        <li>Trabaje con nosotros</li>
+                        <li>Ayuda</li>
+                    </ul>
+                    <ul>
+                        <li><h4>ACCESOS</h4></li>
+                        <li>Inicio</li>
+                        <li>Mi Archivo</li>
+                        <li>Informes</li>
+                        <li>Contactenos</li>
+                    </ul>
+                    <ul>
+                        <li>
+                        <h4>Contacto</h4>
+                        <p>Universidad tecnologica nacional</p>
+                        <p>ZEBALLOS 1341 - S2000BQA - </p>
+                        <p>ROSARIO</p>
+                        <p>0341 - 4481871</p>
+                        <p><b>¡Escríbanos!</b></p>
+                        </li>
+                    </ul>
+                    <ul class="desarrollado-por">
+                        <li >
+                        <p><b>Desarrollado por:</b></p>
+                        <p>Ninotti Cristian 53350</p>  <!--Nombre de cada uno y numero de legajo (Sysacad)-->
+                        <p>TUP 08 - ESPACIO 2024</p>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-derechos-reservados">
+                    <p>TUP - Catedra de Laboratorio de Computación 2 - Año 2024</p>
+                </div>
             </footer>
         </div>
     </div>
 </body>
+
 </html>
