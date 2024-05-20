@@ -2,3 +2,154 @@
     color: rgb(255,217,101); /* Desabilitado el link porque esta en uso */
 }
 
+.migas-pan {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 2em;
+    border-radius: 30px;
+    flex: 2;
+    gap: 7px;
+
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 1.5em 0em 1.5em;
+    border: 3px rgb(208,215,233) solid;
+    flex: 50;
+    border-radius: 30px;
+}
+
+main h2{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 0 0 0.50em 0;
+
+}
+
+.filtro {
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 25px ;
+    width: 45%;
+    padding: 1em;
+    border: solid 1px #E3E3E3;
+    background-color: #F2F2F2;
+    align-items: center;
+    gap: 0.30em;
+}
+
+.icono-filtro {
+    display: flex;
+    width: 12%;
+    justify-content: flex-end;
+    align-items: center;
+    color: #C55A11;
+    font-size: 2em;
+}
+
+.actualizacion-datos-fecha-hora {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    padding: 3px;
+}
+
+.plantilla-precios {
+    display: flex;
+    border: 3px #E3E3E3 solid;
+    background-color: #F4F4F4;
+    height: 18rem;
+    border-radius: 50px 25px 50px 25px;
+    width: 93.25%;
+    padding: 3.75em 1.75em 1.75em 1.75em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+
+
+.item {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+
+}
+.tipo-moneda {
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tipo-moneda h3{
+    padding-left: 1em;
+}
+
+.compra-venta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.venta{
+    display: flex;
+    flex-direction: column;
+    padding-right: 1em;
+    align-items: center;
+}
+
+.fa-star:before {
+FONT-VARIANT: JIS04;
+content: "\f005";
+display: flex;
+align-items: center;
+font-size: 2.5em;
+}
+
+
+.favoritos {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2em;
+}
+
+.final-index {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1em;
+    padding-bottom: 0.25em;
+
+}
+
+.item2 {
+    background-color: #E5E7EB;
+    padding: 0.20em;
+
+}
+
+.item3 {
+    background-color:#4338CA;
+    color: white;
+    padding: 0.20em;
+
+}
+
+.fa-exclamation{
+    font-size: 1.5em;
+}
