@@ -1,0 +1,142 @@
+.link-inicio-migas{
+    color: black;
+}
+.fa-folder{
+    color: rgb(255,217,101); 
+}
+
+/* TÍTULO DE LA PÁGINA MI ARCHIVO */
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    background-color: white;
+}
+
+.titulo tbody, tr { 
+    width: 100%;
+    display: flex;
+}
+
+.fa-print{
+    display: flex;
+    font-size: 2em;
+    color: rgb(28, 61, 124);
+    
+}
+
+
+/* CONTENEDOR GENERAL DE LA PÁGINA "MI ARCHIVO"*/
+
+.contenedor-miarchivo{
+    display: flex;
+    flex-direction: column;
+    height: 31em;
+    width: 100%;
+    border-radius: 15px;
+    padding-top: 15px;
+}
+.contenedor-tabla-archivo{
+    background-color: white;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+}
+.titulo-archivo{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    margin-left: 100px;
+}
+.contenedor-impresora{
+    display: flex;
+    
+    justify-content: end;
+    margin-right: 45px;
+}
+/*.interior-titulo{
+    background-color: white;
+    
+}*/
+.contenedor-tabla{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+
+/*/TABLA DE COTIZACIONES/*/
+
+/*/General/*/
+.tabla{
+    padding-top: 10px;
+    background-color: #DAE2F3;
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    max-height: 27em; /* ------------------------------- ver esto */
+    border-radius: 5px;
+    width: 100%;
+    
+   }
+
+thead{
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+tbody{
+    background-color: white;
+    overflow: auto; /*REVISAR*/
+    /*border-top-left-radius: 0%;
+    border-top-right-radius: 0%;*/
+    
+    
+}
+.foot-tabla{
+    height: 2em;
+    background-color: #DAE2F3;
+    border-radius: 10px; /*revisar*/
+}
+.fila-cabecera{
+    background-color: #DAE2F3;
+    height: 3em;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.fila{
+    text-align: center;
+    display: flex;
+    padding: 3px 0px; /* sacar este padding si se quiere hacer el borde entre columnas */
+}
+
+th, td{
+    width: 100%;
+    border-radius: 0%;
+}
+
+
+
+.contenido-fecha{
+    background-color: #F2F2F2;
+    text-align: left;
+    padding-left: 2%;
+    color: blue;
+    
+}
+
+/* Nombre de la moneda */
+.columna-moneda{
+    text-align: left;
+    
+}
+
+/* Ícono para borrar */
+.columna-borrar{
+    color: #C55A11;
+    font-size: 20px; /* ojo responsive */
+}

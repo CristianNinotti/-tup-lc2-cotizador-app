@@ -19,7 +19,7 @@ main {
     flex-direction: column;
     padding: 1.5em 1.5em 0em 1.5em;
     border: 3px rgb(208,215,233) solid;
-    flex: 50;
+    flex: 2;
     border-radius: 30px;
 }
 
@@ -64,21 +64,22 @@ main h2{
 .plantilla-precios {
     display: flex;
     border: 3px #E3E3E3 solid;
-    background-color: #F4F4F4;
+    background-color: #F2F2F2;
     height: 18rem;
     border-radius: 50px 25px 50px 25px;
     width: 93.25%;
-    padding: 3.75em 1.75em 1.75em 1.75em;
+    padding: 2.00em 0.5em 1.75em 2em;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 1.5em;
+    gap: 1em;
+    
 }
 
 
 
 .item {
     display: flex;
-    width: 50%;
+    width: 45%;
     justify-content: center;
 
 }
@@ -88,11 +89,18 @@ main h2{
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    padding: 1em;
+    border-color: #E4E7EA;
+    background-color: #FFFFFF;
+    font-size: 0.75em;
+    text-transform: uppercase;
 }
 
 .tipo-moneda h3{
     padding-left: 1em;
+    
 }
+
 
 .compra-venta {
     display: flex;
@@ -100,11 +108,17 @@ main h2{
     align-items: flex-end;
 }
 
+#combobox{
+    width: 22em;
+    height: 2.5em;
+}
+
 .compra {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 2em;
+    padding-right: 1em;
+    padding-left: 0em;
 }
 
 .venta{
@@ -114,14 +128,39 @@ main h2{
     align-items: center;
 }
 
+i.fa-solid.fa-star-hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i.fa-solid.fa-star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .fa-star:before {
 FONT-VARIANT: JIS04;
 content: "\f005";
-display: flex;
-align-items: center;
 font-size: 2.5em;
+color: #DAE2F3;
+padding-left: 0.25em;
 }
 
+.fa-star-hover:before{  /* Cambiar para hoover */
+FONT-VARIANT: JIS04;
+content: "\f005";
+font-size: 2.5em;
+color: #4672C4;
+padding-left: 0.25em;
+}
+
+.compra-venta h4{
+    color: grey;
+    font-size: 0.75em;
+}
 
 .favoritos {
     display: flex;
