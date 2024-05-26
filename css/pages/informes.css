@@ -183,3 +183,7 @@ td {
 .fila-contenido-moneda {
     display: flex;
 }
+
+.footer-lista ul li a {
+    color: black;
+  }
