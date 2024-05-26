@@ -205,6 +205,10 @@ i.fa-solid.fa-star {
     font-size: 1.5em;
 }
 
-.footer-lista ul li a {
+.footer-lista ul li a:visited {
+    color: black;
+  }
+  
+  .footer-lista ul li a {
     color: black;
   }

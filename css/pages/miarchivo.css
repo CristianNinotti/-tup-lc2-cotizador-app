@@ -154,6 +154,10 @@ td {
     /* ojo responsive */
 }
 
-.footer-lista ul li a {
+.footer-lista ul li a:visited {
+    color: black;
+  }
+  
+  .footer-lista ul li a {
     color: black;
   }
