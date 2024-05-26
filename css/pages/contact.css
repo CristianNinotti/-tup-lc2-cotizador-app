@@ -25,6 +25,10 @@ main {
   height: 80%;
 }
 
+a.link-inicio-migas{
+  color: black;
+}
+
 .total {
   display: flex;
   flex-direction: column;
