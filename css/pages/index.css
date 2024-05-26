@@ -1,5 +1,27 @@
-.fa-house{
-    color: rgb(255,217,101); /* Desabilitado el link porque esta en uso */
+/*General */
+
+.contenedor-general {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 90%;
+}
+
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    padding: 1em;
+    margin: 1em;
+    width: 100%;
+}
+
+/* Desabilitado el link porque esta en uso */
+.fa-house {
+    color: rgb(255, 217, 101); 
 }
 
 .migas-pan {
@@ -10,33 +32,30 @@
     border-radius: 30px;
     flex: 2;
     gap: 7px;
-
-
 }
 
 main {
     display: flex;
     flex-direction: column;
     padding: 1.5em 1.5em 0em 1.5em;
-    border: 3px rgb(208,215,233) solid;
+    border: 3px rgb(208, 215, 233) solid;
     flex: 2;
     border-radius: 30px;
 }
 
-main h2{
+main h2 {
     display: flex;
     justify-content: center;
     height: 30px;
     width: 100%;
     flex-wrap: nowrap;
     padding: 0 0 0.50em 0;
-
 }
 
 .filtro {
     display: flex;
     justify-content: flex-start;
-    border-radius: 25px ;
+    border-radius: 25px;
     width: 45%;
     padding: 1em;
     border: solid 1px #E3E3E3;
@@ -72,17 +91,14 @@ main h2{
     flex-direction: column;
     flex-wrap: wrap;
     gap: 1em;
-    
 }
-
-
 
 .item {
     display: flex;
     width: 45%;
     justify-content: center;
-
 }
+
 .tipo-moneda {
     border: 1px solid black;
     display: flex;
@@ -96,11 +112,9 @@ main h2{
     text-transform: uppercase;
 }
 
-.tipo-moneda h3{
+.tipo-moneda h3 {
     padding-left: 1em;
-    
 }
-
 
 .compra-venta {
     display: flex;
@@ -108,7 +122,7 @@ main h2{
     align-items: flex-end;
 }
 
-#combobox{
+#combobox {
     width: 22em;
     height: 2.5em;
 }
@@ -121,20 +135,20 @@ main h2{
     padding-left: 0em;
 }
 
-.venta{
+.venta {
     display: flex;
     flex-direction: column;
     padding-right: 1em;
     align-items: center;
 }
 
-i.fa-solid.fa-star-hover{
+i.fa-solid.fa-star-hover {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-i.fa-solid.fa-star{
+i.fa-solid.fa-star {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,22 +156,23 @@ i.fa-solid.fa-star{
 
 
 .fa-star:before {
-FONT-VARIANT: JIS04;
-content: "\f005";
-font-size: 2.5em;
-color: #DAE2F3;
-padding-left: 0.25em;
+    FONT-VARIANT: JIS04;
+    content: "\f005";
+    font-size: 2.5em;
+    color: #DAE2F3;
+    padding-left: 0.25em;
 }
 
-.fa-star-hover:before{  /* Cambiar para hoover */
-FONT-VARIANT: JIS04;
-content: "\f005";
-font-size: 2.5em;
-color: #4672C4;
-padding-left: 0.25em;
+/* Cambiar para hoover */
+.fa-star-hover:before {
+    FONT-VARIANT: JIS04;
+    content: "\f005";
+    font-size: 2.5em;
+    color: #4672C4;
+    padding-left: 0.25em;
 }
 
-.compra-venta h4{
+.compra-venta h4 {
     color: grey;
     font-size: 0.75em;
 }
@@ -173,22 +188,19 @@ padding-left: 0.25em;
     justify-content: flex-end;
     padding-top: 1em;
     padding-bottom: 0.25em;
-
 }
 
 .item2 {
     background-color: #E5E7EB;
     padding: 0.20em;
-
 }
 
 .item3 {
-    background-color:#4338CA;
+    background-color: #4338CA;
     color: white;
     padding: 0.20em;
-
 }
 
-.fa-exclamation{
+.fa-exclamation {
     font-size: 1.5em;
 }

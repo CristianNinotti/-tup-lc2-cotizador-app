@@ -1,217 +1,224 @@
-body {
-    font-family: sans-serif;
-    background-color: white;
-    padding-left: 0.625em;
-    padding-right: 0%;
-  }
-
-  .fa-address-card{
-    color: rgb(255,217,101); 
+.contenedor-general {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 90%;
 }
 
-  .general{
-    padding-left: 0.625em;
-    padding-right: 0.625em;
-    padding-top: 1.25em;
-    display: flex;
-    width: 100%;
-    
-  }
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: solid black 1px;
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+  width: 100%;
+}
 
-  main{
-    height: 80%;
-  }
+.fa-address-card {
+  color: rgb(255, 217, 101);
+}
 
-  .total{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-  }
-  .titulo_total{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    padding-top: 2em;
-    font-size: 10px;
-  }
- 
-  
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    height: 80%;
-    border: 0.125em solid #DCDCDC;
-    margin-top: 1.25em;
-    padding: 0.625em;
-    background-color: #F2F2F2;
-    border-radius: 0.9375em;
-    border-top-right-radius: 1.875em;
-    border-bottom-left-radius: 1.875em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    align-items: flex-start;
-  }
-  
-  h2{
-    font-size: 17px;
-    margin-bottom: 2em;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .form {
-    display: flex;
-    height: 40vh;
-    width: 100%;
-    font-weight: 0.8em;
-    text-align: left;
-    flex-direction: column;
-    align-content:first baseline;
-    align-self: flex-start;
-    padding-bottom: 0.588em;
-    
-    }
-  
-  .fields {
-    display: flex;
-    margin-bottom: 1.176em;
-  }
-  
-  .label-container {
-    width: 4.412em;
-    text-align: right;
-  }
-  
-  .fields input,
-  .fields textarea {
-    flex: 1;
-    padding: 0.4375em;
-    border: 1px solid #ccc;
-    border-radius: 0.3125em;
-  }
-  
-  .fields textarea {
-    resize: vertical;
-    margin-left: 0.7em;
-  }
-  
-  .buttons {
-    display: flex;
-    padding-top: 4em;
-    padding-left: 15em;
-  }
-  
-  .button {
-    padding: 0.75em 1.25em;
-    border: none;
-    width: 6.25em;
-    border-radius: 0.3125em;
-    margin-right: 0.625em;
-    background-color: #A5A5A5;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+main {
+  height: 80%;
+}
 
-  .button1 {
-    padding: 0.75em 1.25em;
-    border: none;
-    width: 6.25em;
-    border-radius: 0.3125em;
-    margin-right: 0.625em;
-    background-color: #00B050;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
-   
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  .button1:hover {
-    background-color: #4A8800;
-  }
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
 
-  .texto{
-    align-items: center;
-    margin-top: 0px;
-    font-size: 15px;
-    padding-bottom: 13vh;
-    
-  }
-  .section_total{
-    display: flex;
-    padding-top: 1.50em;
-    align-items: center;
-    width: 100%;
-    height: 13em;
-    border: 0.125em solid #E3E3E3;
-    border-radius: 0.3125em;
-    }
+.titulo_total {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-top: 2em;
+  font-size: 0.75em;
+}
 
-  .section{
-    
-    display: flex;
-    height: 50%;
-    width: 75%;
-    font-size: 10px;
-    text-align: left;
-    flex-direction: column;
-    align-items: flex-start;
-    
-    }
-    .logo{
-      display: flex;
-      height: 6.875em;
-      width: 12em;
-      
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 80%;
+  border: 0.125em solid #DCDCDC;
+  margin-top: 1.25em;
+  padding: 0.625em;
+  background-color: #F2F2F2;
+  border-radius: 0.9375em;
+  border-top-right-radius: 1.875em;
+  border-bottom-left-radius: 1.875em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  align-items: flex-start;
+}
 
-    }
-    
-  .section h2{
-    font-size: 17px;
-  }
-  .section p{
-    
-    margin-block-start: 0.0625em;
-    margin-block-end: 0.0625em;
-    margin-left: 7%;
-    font-size: 15px;
-    margin-top: 0%;  
-  }  
-  
-  .general{
-    display: flex;
-    flex-direction: row;
-  }
-  .datos2{
-    padding-left: 1.9em;
-    width: 50%;
-    height: 50vh;
-    padding-top: 4vh;
-   }
+.titulo-principal {
+  font-size: 1.3em;
+  padding-bottom: 1em;
+}
 
-  .p1{
-    padding-bottom: 5%;
-    
-  }
-  input{
-    width: 100%;
-    margin-left: 0.625em;
-  }
-  label{
-    display: flex;
-    justify-content: flex-start;
-    font-weight: bold;
-  }
- 
- 
+.titulo-contacto {
+  font-size: 1em;
+  margin-bottom: 2em;
+  align-items: center;
+  font-weight: bold;
+}
 
-  
+.form {
+  display: flex;
+  height: 40vh;
+  width: 100%;
+  font-weight: 0.8em;
+  text-align: left;
+  flex-direction: column;
+  align-content: first baseline;
+  align-self: flex-start;
+  padding-bottom: 0.588em;
+}
 
-  
+.fields {
+  display: flex;
+  margin-bottom: 1.176em;
+}
+
+.label-container {
+  width: 4.412em;
+  text-align: right;
+}
+
+.fields input,
+.fields textarea {
+  flex: 1;
+  padding: 0.4375em;
+  border: 1px solid #ccc;
+  border-radius: 0.3125em;
+}
+
+.fields textarea {
+  resize: vertical;
+  margin-left: 0.7em;
+}
+
+.buttons {
+  display: flex;
+  padding-top: 4em;
+  padding-left: 15em;
+}
+
+.button {
+  padding: 0.75em 1.25em;
+  border: none;
+  width: 6.25em;
+  border-radius: 0.3125em;
+  margin-right: 0.625em;
+  background-color: #A5A5A5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button1 {
+  padding: 0.75em 1.25em;
+  border: none;
+  width: 6.25em;
+  border-radius: 0.3125em;
+  margin-right: 0.625em;
+  background-color: #00B050;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button1:hover {
+  background-color: #4A8800;
+}
+
+.texto {
+  align-items: center;
+  margin-top: 0px;
+  font-size: 15px;
+  padding-bottom: 13vh;
+}
+
+.section_total {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 13em;
+  border: 0.125em solid #E3E3E3;
+  border-radius: 0.3125em;
+}
+
+.section {
+
+  display: flex;
+  width: 75%;
+  font-size: 10px;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-utn {
+  display: flex;
+  height: 8em;
+  width: 13em;
+}
+
+.section h2 {
+  font-size: 1.8em;
+}
+
+.section p {
+
+  margin-block-start: 0.0625em;
+  margin-block-end: 0.0625em;
+  margin-left: 7%;
+  font-size: 15px;
+  margin-top: 0%;
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+}
+
+.datos2 {
+  padding-left: 1.9em;
+  width: 50%;
+  height: 50vh;
+  padding-top: 4vh;
+}
+
+.p1 {
+  padding-bottom: 5%;
+}
+
+input {
+  width: 100%;
+  margin-left: 0.625em;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+
+.footer-lista ul li a:visited {
+  color: black;
+}
+
+.footer-lista ul li a {
+  color: black;
+}

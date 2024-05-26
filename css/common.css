@@ -3,7 +3,8 @@
     padding: 0;
 }
 
-body, html {
+body,
+html {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,7 @@ body, html {
     background-color: lightgrey;
 }
 
-.contenedor-general{
+.contenedor-general {
     display: flex;
     justify-content: center;
     background-color: white;
@@ -48,10 +49,9 @@ header {
     border-radius: 2px solid black;
     margin-top: 0;
     border-radius: 30px
-
 }
 
-header p{
+header p {
     display: flex;
     justify-content: center;
     padding: 15px 0px 15px 0px;
@@ -64,10 +64,7 @@ header p{
     width: 10%;
     height: 40%;
     padding: 15px 0px 15px 0px;
-
 }
-
-
 
 .nav-bar {
     display: flex;
@@ -75,11 +72,10 @@ header p{
     height: 41em;
     padding: 10px 0 10px 0;
     gap: 10px;
-
 }
 
 .lateral {
-    background-color: rgb(189,215,238);
+    background-color: rgb(189, 215, 238);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +90,7 @@ ul {
     list-style: none;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100%;  
+    width: 100%;
     margin: 15px;
 }
 
@@ -102,50 +98,49 @@ ul li {
     padding: 0 20px 0 20px;
 }
 
-.li-inicio{
+.li-inicio {
     display: flex;
     justify-content: flex-end;
 }
 
-.lateral ul li a{
+.lateral ul li a {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 7.5px;
     margin: 5px;
     border-radius: 50px;
-    background-color: rgb(70,114,196);
+    background-color: rgb(70, 114, 196);
     text-decoration: none;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
-.lateral ul li .a-inicio{
+.lateral ul li .a-inicio {
     display: flex;
     justify-content: space-around;
-    align-items: center; 
-    background-color: rgb(191,191,191); /* Desabilitado el link porque esta en uso */
-    pointer-events: none;   /* Desabilitado el link porque esta en uso */
-    
+    align-items: center;
+    background-color: rgb(191, 191, 191);
+    pointer-events: none;
 }
 
 
 
-ul li i{
+ul li i {
     font-size: 35px;
     color: white;
     border-color: black;
 }
 
-ul li a:hover{
-    background-color: #90AADB;   
+ul li a:hover {
+    background-color: #90AADB;
 }
-ul li a:hover i{
+
+ul li a:hover i {
     color: #4672C4;
 }
 
-ul li a p{
+ul li a p {
     display: flex;
     padding-left: 10px;
 }
@@ -158,23 +153,22 @@ ul li a p{
     width: 90%;
     background-color: white;
     margin-bottom: 20px;
-    margin-top:80px;
+    margin-top: 80px;
     border-radius: 15%;
     gap: 15px;
-
 }
 
-.opinion-img{
+.opinion-img {
     display: flex;
     height: 100px;
     width: 45%;
 }
 
-.opinion-img img{
+.opinion-img img {
     border-radius: 50px;
 }
 
-.opinion-nombre{
+.opinion-nombre {
     width: 45%;
     display: flex;
     flex-direction: column;
@@ -182,11 +176,10 @@ ul li a p{
     justify-content: center;
     gap: 15px;
     font-size: 15px;
-    padding: 2,5px;
-
+    padding: 2, 5px;
 }
 
-.contenido-central{
+.contenido-central {
     width: 100%;
     height: 100%;
     display: flex;
@@ -194,7 +187,6 @@ ul li a p{
     justify-content: space-between;
     gap: 10px;
     flex: 4;
-
 }
 
 .migas-pan {
@@ -205,29 +197,27 @@ ul li a p{
     border-radius: 30px;
     flex: 2;
     gap: 7px;
-
-
 }
+
 main {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border: 3px rgb(208,215,233) solid;
+    border: 3px rgb(208, 215, 233) solid;
     flex: 50;
     border-radius: 30px;
 }
 
-main h2{
+main h2 {
     display: flex;
     justify-content: center;
     height: 30px;
     width: 100%;
     flex-wrap: nowrap;
-
 }
 
 footer {
-    background-color: rgb(254,229,153);
+    background-color: rgb(254, 229, 153);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -235,17 +225,15 @@ footer {
     width: 100%;
     border-radius: 25px;
     margin-top: 1em;
-
 }
 
 
-.footer-lista{
+.footer-lista {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding:15px;
+    padding: 15px;
     margin: 15px;
-  
 }
 
 .footer-lista ul li a {
@@ -253,34 +241,32 @@ footer {
     justify-content: flex-start;
     align-items: center;
     text-decoration: underline;
-    background-color: rgb(254,229,153);
+    background-color: rgb(254, 229, 153);
     padding: 0px;
-    
-
 }
-.footer-lista ul li a:visited{
+
+.footer-lista ul li a:visited {
     color: black;
 }
 
-.footer-derechos-reservados{
+.footer-derechos-reservados {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
     padding-bottom: 15px;
-    
-
-
 }
+
 .contacto-footer {
-    display: flex;   
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
 }
 
-.contacto-footer .escribanos-footer{
+.contacto-footer .escribanos-footer {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    color: black;
 }
 
 .desarrollado-por li {
@@ -289,9 +275,4 @@ footer {
     align-items: flex-end;
     justify-content: flex-end;
     height: 100%;
-    
 }
-
-
-
-
