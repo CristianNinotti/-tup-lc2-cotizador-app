@@ -276,3 +276,71 @@ footer {
     justify-content: flex-end;
     height: 100%;
 }
+
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .lateral {
+        width: 100%;
+    }
+
+    .opinion {
+        flex-direction: column;
+    }
+
+    .opinion-img,
+    .opinion-nombre {
+        width: 100%;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 1.5em;
+    }
+
+    .logo {
+        width: 20%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .lateral {
+        width: 100%;
+    }
+
+    .opinion {
+        flex-direction: column;
+    }
+
+    .opinion-img,
+    .opinion-nombre {
+        width: 100%;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .logo {
+        width: 30%;
+    }
+}

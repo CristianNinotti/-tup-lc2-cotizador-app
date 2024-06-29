@@ -84,11 +84,11 @@ main h2 {
     display: flex;
     border: 3px #E3E3E3 solid;
     background-color: #F2F2F2;
-    height: 18rem;
+    height: 28rem;
     border-radius: 50px 25px 50px 25px;
     width: 93.25%;
-    padding: 2.00em 0.5em 1.75em 2em;
     flex-direction: column;
+    padding: 0.9em;
     flex-wrap: wrap;
     gap: 1em;
 }
@@ -212,3 +212,49 @@ i.fa-solid.fa-star {
   .footer-lista ul li a {
     color: black;
   }
+
+  @media (max-width: 768px) {
+    .plantilla-precios {
+        flex-direction: column;
+    }
+
+    .item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .footer-lista {
+        flex-direction: column;
+    }
+
+    .footer-lista ul {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 0.5rem;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .contenido-central {
+        padding: 0.5rem;
+    }
+
+    .filtro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filtro label, .filtro select {
+        margin-bottom: 0.5rem;
+    }
+
+    .plantilla-precios {
+        gap: 0.5rem;
+    }
+}

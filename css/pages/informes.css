@@ -191,3 +191,72 @@ td {
   .footer-lista ul li a {
     color: black;
   }
+
+  /* Tablets */
+@media (max-width: 768px) {
+    .contenedor-general {
+        width: 95%;
+    }
+
+    .div-superior {
+        flex-direction: column;
+    }
+
+    .filtro {
+        width: 100%;
+    }
+
+    .label,
+    .select-input {
+        width: 100%;
+    }
+
+    .icono-filtro {
+        font-size: 2em;
+    }
+
+    .mail {
+        font-size: 2.5em;
+    }
+
+    .tabla {
+        max-height: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .contenedor-general {
+        width: 100%;
+    }
+
+    .div-superior {
+        flex-direction: column;
+    }
+
+    .filtro {
+        width: 100%;
+    }
+
+    .label,
+    .select-input {
+        width: 100%;
+    }
+
+    .icono-filtro {
+        font-size: 1.5em;
+    }
+
+    .mail {
+        font-size: 2em;
+    }
+
+    .tabla {
+        max-height: none;
+    }
+
+    th,
+    td {
+        padding: 3px;
+    }
+}

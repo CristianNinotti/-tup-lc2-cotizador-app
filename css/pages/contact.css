@@ -226,3 +226,97 @@ label {
 .footer-lista ul li a {
   color: black;
 }
+
+@media (max-width: 768px) {
+  .contenedor-general {
+      width: 100%;
+  }
+
+  .container {
+      width: 90%;
+  }
+
+  .titulo_total {
+      font-size: 1rem;
+  }
+
+  .titulo-principal {
+      font-size: 0.9rem;
+  }
+
+  .titulo-contacto {
+      font-size: 0.8rem;
+  }
+
+  .form {
+      height: auto;
+      font-size: 0.7rem;
+  }
+
+  .buttons {
+      padding-top: 1em;
+      justify-content: center;
+  }
+
+  .button, .button1 {
+      width: 5em;
+  }
+
+  .section h2 {
+      font-size: 1.3rem;
+  }
+
+  .section p {
+      font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-general {
+      width: 100%;
+  }
+
+  .contenedor-principal {
+      padding: 0.5em;
+  }
+
+  .container {
+      width: 100%;
+      height: auto;
+      padding: 0.5em;
+  }
+
+  .titulo_total {
+      font-size: 0.9rem;
+  }
+
+  .titulo-principal {
+      font-size: 0.8rem;
+  }
+
+  .titulo-contacto {
+      font-size: 0.7rem;
+  }
+
+  .form {
+      height: auto;
+      font-size: 0.6rem;
+  }
+
+  .buttons {
+      padding-top: 1em;
+      justify-content: center;
+  }
+
+  .button, .button1 {
+      width: 4.5em;
+  }
+
+  .section h2 {
+      font-size: 1.1rem;
+  }
+
+  .section p {
+      font-size: 0.7rem;
+  }
+}

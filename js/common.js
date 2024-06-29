@@ -93,7 +93,7 @@
 
 // */
 
-const arregloNuevo = []
+let arregloNuevo = []
 
 fetch("https://dolarapi.com/v1/dolares")
   .then(response => response.json())
@@ -125,8 +125,59 @@ fetch("https://dolarapi.com/v1/dolares")
     console.error("Error al obtener datos de cotización:", error);
   });
 
+  
+
+
+
   // en inicio se actualiza cada 5 minutos
   // en mi archivo en local storage ( se guardan el historial de la cotizacion en favoritos en mi archivo del index a mi archivo)
   // en mi informe se actualiza cada 5 minutos
 
 
+  /* Grafica
+async function obtenerCotizaciones () {
+  try {
+    etiquetas.push('09/06/2024', '10/06/2024', '11/06/2024', '12/06/2024');
+    
+    fecha 
+        moneda dolar 
+        valor 
+        moneda euro 
+        valor
+    fecha 
+        moneda dolar 
+        valor
+        moneda bloue    
+        valor
+
+    fecha 1
+    {moneda: dolar,
+      valor: 1,
+    }, 
+    {moneda: euro,
+      valor: 100,
+    },
+    fecha 2
+    {moneda: dolar,
+      valor: 2
+    },
+    {
+      moneda: blue,
+      valor: 100,
+    },
+
+
+
+  }
+}
+
+objdatos = {
+  label: "USD OFicial",
+  data: [,680,1000], //Variacion de precios // Primer lugar vacio
+  borderColor: blue,
+  backgroundColor: lighblue,
+  borderWitdh: 1,
+  fill: false
+}
+  datosLinea.push(objDatos);
+*/
