@@ -49,7 +49,7 @@ a.link-inicio-migas{
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  height: 80%;
+  height: 85%;
   border: 0.125em solid #DCDCDC;
   margin-top: 1.25em;
   padding: 0.625em;
@@ -104,15 +104,15 @@ a.link-inicio-migas{
   border-radius: 0.3125em;
 }
 
-.fields textarea {
-  resize: vertical;
-  margin-left: 0.7em;
+#message {
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+  width: 0.5em; 
+  height: 10em;
 }
 
 .buttons {
   display: flex;
-  padding-top: 4em;
-  padding-left: 15em;
+  justify-content: flex-end;
 }
 
 .button {
@@ -200,7 +200,7 @@ a.link-inicio-migas{
 .datos2 {
   padding-left: 1.9em;
   width: 50%;
-  height: 50vh;
+  height: 90%;
   padding-top: 4vh;
 }
 
@@ -234,6 +234,7 @@ label {
 
   .container {
       width: 90%;
+      height: 90%;
   }
 
   .titulo_total {
@@ -320,3 +321,4 @@ label {
       font-size: 0.7rem;
   }
 }
+

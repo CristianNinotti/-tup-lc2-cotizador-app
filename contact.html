@@ -9,8 +9,10 @@
     <link rel="icon" type="image/svg+xml" href="icon/coins-solid.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/pages/contact.css">
-    <script src="js/pages/contact.js" defer></script>
     <script src="js/common.js" defer></script>
+    <script src="js/pages/contact.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -89,16 +91,17 @@
 
                                         <div class="fields">
                                             <div class="label-container">
-                                                <label for="message">Mensaje:</label>
+                                                <label for="message">Mensaje</label>
                                             </div>
-                                            <textarea id="message" name="message" rows="15" required></textarea>
+                                            <textarea id="message" name="message" rows="5" required></textarea>
 
                                         </div>
+                                        <div class="buttons">
+                                            <button type="reset" class="button">LIMPIAR</button>
+                                            <button id="enviar" type="submit" class="button1">ENVIAR</button>
+                                        </div>
                                     </form>
-                                    <div class="buttons">
-                                        <button type="reset" class="button">LIMPIAR</button>
-                                        <button type="submit" class="button1">ENVIAR</button>
-                                    </div>
+
                                 </div>
                                 <div class="datos2">
                                     <div class="texto">
