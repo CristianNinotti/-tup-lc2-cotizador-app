@@ -73,6 +73,10 @@ main h2 {
     font-size: 2em;
 }
 
+.fa-filter:hover{
+    color:black
+}
+
 .actualizacion-datos-fecha-hora {
     display: flex;
     justify-content: flex-end;
@@ -84,13 +88,13 @@ main h2 {
     display: flex;
     border: 3px #E3E3E3 solid;
     background-color: #F2F2F2;
-    height: 28rem;
+    height: 23.75rem;
     border-radius: 50px 25px 50px 25px;
-    width: 93.25%;
+    width: 97%;
     flex-direction: column;
     padding: 0.9em;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 .item {
@@ -180,7 +184,7 @@ i.fa-solid.fa-star {
 .favoritos {
     display: flex;
     justify-content: flex-start;
-    padding-top: 2em;
+    /*padding-top: 2em;*/
 }
 
 .final-index {
@@ -199,6 +203,12 @@ i.fa-solid.fa-star {
     background-color: #4338CA;
     color: white;
     padding: 0.20em;
+}
+
+/*ACÁ AGREGUÉ PARA EL LINK DE DOLAR API*/
+.item3 a{
+    color: white;
+    text-decoration: none;
 }
 
 .fa-exclamation {
@@ -258,3 +268,16 @@ i.fa-solid.fa-star {
         gap: 0.5rem;
     }
 }
+
+
+/*Aca pruebo lo de las estrellas*/
+/* Agregar nuevo estilo para la estrella activada */
+.fa-star.active:before {
+    color: #4672C4; /* Cambio de color a azul más oscuro */
+}
+
+/* Cambiar para hoover */
+.fa-star:hover:before {
+    color: #4672C4;
+}
+

@@ -1,3 +1,4 @@
+/*
 .link-inicio-migas {
     color: black;
 }
@@ -6,7 +7,8 @@
     color: rgb(255, 217, 101);
 }
 
-/* General container */
+/* General container*/
+/*
 .contenedor-general {
     display: flex;
     flex-direction: column;
@@ -110,8 +112,9 @@
     flex: 1;
     max-width: 100%;
 }
-
+*/
 /* Estilos para la tabla */
+/*
 .tabla {
     background-color: #DAE2F3;
     display: flex;
@@ -192,71 +195,275 @@ td {
     color: black;
   }
 
-  /* Tablets */
-@media (max-width: 768px) {
-    .contenedor-general {
-        width: 95%;
-    }
+  */
 
-    .div-superior {
-        flex-direction: column;
-    }
 
-    .filtro {
-        width: 100%;
-    }
 
-    .label,
-    .select-input {
-        width: 100%;
-    }
-
-    .icono-filtro {
-        font-size: 2em;
-    }
-
-    .mail {
-        font-size: 2.5em;
-    }
-
-    .tabla {
-        max-height: none;
-    }
+.link-inicio-migas {
+    color: black;
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    .contenedor-general {
-        width: 100%;
-    }
-
-    .div-superior {
-        flex-direction: column;
-    }
-
-    .filtro {
-        width: 100%;
-    }
-
-    .label,
-    .select-input {
-        width: 100%;
-    }
-
-    .icono-filtro {
-        font-size: 1.5em;
-    }
-
-    .mail {
-        font-size: 2em;
-    }
-
-    .tabla {
-        max-height: none;
-    }
-
-    th,
-    td {
-        padding: 3px;
-    }
+.fa-file {
+    color: rgb(255, 217, 101);
 }
+
+/* General container */
+.contenedor-general {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
+
+.div-superior {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 1;
+}
+
+.div-superior-izquierda {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    margin: 10px;
+    align-items: start;
+}
+
+.div-superior-derecha {
+    display: flex;
+    flex: 1;
+    padding-left: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.img-grafica {
+    max-width: 75%;
+    max-height: 100%;
+}
+
+.filtro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    max-width: 75%;
+    max-height: 30%;
+    padding: 1em;
+    border: solid 1px #E3E3E3;
+    background-color: #F2F2F2;
+    gap: 0.30em;
+    flex: 2;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.30em;
+}
+
+#combobox {
+    width: 25em;
+    height: 3em;
+}
+
+.icono-filtro {
+    display: flex;
+    align-items: center;
+    color: #C55A11;
+    font-size: 2.5em;
+    padding-left: 0.5em;
+    margin-top: 0.45em;
+}
+
+.fa-filter:hover{
+    color:black
+}
+
+.mail {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: flex-end;
+    font-size: 3em;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.fa-envelope-open-text {
+    color: #AABEFF;
+}
+
+.Texto-info {
+    font-size: 15px;
+    color: black;
+}
+
+.fa-circle-up {
+    color: green;
+}
+
+.fa-circle-down {
+    color: red;
+}
+
+
+
+.div-inferior {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+}
+
+/* Estilos para la tabla */
+.tabla {
+    background-color: #DAE2F3;
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    max-height: 15em;
+    border-radius: 15px;
+    width: 100%;
+    border-collapse: collapse; /* Para asegurar bordes combinados */
+}
+
+thead {
+    display: flex;
+}
+
+tbody {
+    padding-top: 15px;
+    background-color: white;
+    overflow: auto;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    padding-bottom: 1em;
+}
+
+.foot-tabla {
+    height: 2em;
+    background-color: #DAE2F3;
+    border-radius: 25px;
+}
+
+.fila-cabecera {
+    display: flex;
+    height: 2em;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ddd; /* Borde inferior para fila cabecera */
+}
+
+.fila-cabecera td {
+    text-align: center;
+    padding-right: 8em;
+}
+
+.fila {
+    text-align: left;
+    display: flex;
+    padding: 3px 0px;
+    border-bottom: 1px solid #ddd; /* Borde inferior para fila */
+}
+
+th {
+    display: flex;
+    border-radius: 5px;
+    flex: 1;
+    justify-content: flex-start;
+    border: 1px solid #ddd; /* Borde para celdas de encabezado */
+}
+
+td {
+    border-radius: 5px;
+    flex: 1;
+    padding: 0.5em; /* Añadir padding para mayor espacio */
+    border: 1px solid #ddd; /* Borde para celdas de datos */
+}
+
+/* Moneda */
+.moneda {
+    display: flex;
+    color: blue;
+    background-color: #F2F2F2;
+    height: 2em;
+    align-items: center;
+    padding-left: 2em;
+}
+
+/* Fila contenido moneda */
+.fila-contenido-moneda {
+    display: flex;
+}
+
+/* Ajustes adicionales */
+.fila-cabecera, .fila-contenido-moneda td {
+    padding: 0.1em;
+    text-align: center;
+}
+
+.columna-moneda {
+    font-weight: bold;
+    background-color: #e1f5fe; /* color diferente para la columna de la moneda */
+}
+
+.columna-fecha, .columna-borrar {
+    background-color: white;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: white; /* color alternativo para las filas */
+}
+
+/* Footer lista */
+.footer-lista ul li a:visited, .footer-lista ul li a {
+    color: black;
+}
+
+
+
+
+
+/* Estilos existentes */
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(166, 160, 160, 0.459); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: yellow;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 28em;
+    border-radius: 2em;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

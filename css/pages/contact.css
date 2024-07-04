@@ -49,7 +49,7 @@ a.link-inicio-migas{
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  height: 85%;
+  height: 90%;
   border: 0.125em solid #DCDCDC;
   margin-top: 1.25em;
   padding: 0.625em;
@@ -104,15 +104,15 @@ a.link-inicio-migas{
   border-radius: 0.3125em;
 }
 
-#message {
-  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
-  width: 0.5em; 
-  height: 10em;
+.fields textarea {
+  resize: vertical;
+  margin-left: 0.7em;
 }
 
 .buttons {
   display: flex;
-  justify-content: flex-end;
+  padding-top: 1em;
+  padding-left: 15em;
 }
 
 .button {
@@ -227,98 +227,8 @@ label {
   color: black;
 }
 
-@media (max-width: 768px) {
-  .contenedor-general {
-      width: 100%;
-  }
-
-  .container {
-      width: 90%;
-      height: 90%;
-  }
-
-  .titulo_total {
-      font-size: 1rem;
-  }
-
-  .titulo-principal {
-      font-size: 0.9rem;
-  }
-
-  .titulo-contacto {
-      font-size: 0.8rem;
-  }
-
-  .form {
-      height: auto;
-      font-size: 0.7rem;
-  }
-
-  .buttons {
-      padding-top: 1em;
-      justify-content: center;
-  }
-
-  .button, .button1 {
-      width: 5em;
-  }
-
-  .section h2 {
-      font-size: 1.3rem;
-  }
-
-  .section p {
-      font-size: 0.8rem;
-  }
+#message {
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+  width: 40em; /* Ancho fijo del textarea */
+  height: 9em; /* Altura fija del textarea */
 }
-
-@media (max-width: 480px) {
-  .contenedor-general {
-      width: 100%;
-  }
-
-  .contenedor-principal {
-      padding: 0.5em;
-  }
-
-  .container {
-      width: 100%;
-      height: auto;
-      padding: 0.5em;
-  }
-
-  .titulo_total {
-      font-size: 0.9rem;
-  }
-
-  .titulo-principal {
-      font-size: 0.8rem;
-  }
-
-  .titulo-contacto {
-      font-size: 0.7rem;
-  }
-
-  .form {
-      height: auto;
-      font-size: 0.6rem;
-  }
-
-  .buttons {
-      padding-top: 1em;
-      justify-content: center;
-  }
-
-  .button, .button1 {
-      width: 4.5em;
-  }
-
-  .section h2 {
-      font-size: 1.1rem;
-  }
-
-  .section p {
-      font-size: 0.7rem;
-  }
-}
-

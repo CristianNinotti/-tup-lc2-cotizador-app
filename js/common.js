@@ -125,59 +125,86 @@ fetch("https://dolarapi.com/v1/dolares")
     console.error("Error al obtener datos de cotización:", error);
   });
 
-  
-
-
-
   // en inicio se actualiza cada 5 minutos
   // en mi archivo en local storage ( se guardan el historial de la cotizacion en favoritos en mi archivo del index a mi archivo)
   // en mi informe se actualiza cada 5 minutos
 
 
-  /* Grafica
-async function obtenerCotizaciones () {
-  try {
-    etiquetas.push('09/06/2024', '10/06/2024', '11/06/2024', '12/06/2024');
-    
-    fecha 
-        moneda dolar 
-        valor 
-        moneda euro 
-        valor
-    fecha 
-        moneda dolar 
-        valor
-        moneda bloue    
-        valor
 
-    fecha 1
-    {moneda: dolar,
-      valor: 1,
-    }, 
-    {moneda: euro,
-      valor: 100,
-    },
-    fecha 2
-    {moneda: dolar,
-      valor: 2
+
+
+  //ACÁ ESTOY PROBANDO EL CAMBIO DE OPINIONES
+  // Array de opiniones (puedes agregar más si quieres)
+  const opiniones = [
+    {
+      imagen: "img/fran.png",
+        nombre: "Poli Veliz Francisco Alberto",
+        comentario: "Formamos un gran equipo con Ninotti Cristian y Gonzalez Nahuel."
     },
     {
-      moneda: blue,
-      valor: 100,
+        imagen: "img/cris.jpg",
+        nombre: "Ninotti Cristian",
+        comentario: "Formamos un gran equipo con Poli Veliz Francisco y Gonzalez Nahuel."
     },
+    {
+        imagen: "img/nahue.jpg",
+        nombre: "Gonzalez Nahuel",
+        comentario: "Formamos un gran equipo con Ninotti Cristian y Poli Veliz Francisco."
+    }
+];
 
-
-
+const legajos = [
+  {
+    legajo: "53393",
+    
+  },
+  {
+    legajo: "53350",
+  },
+  {
+    legajo: "53640",
   }
+];
+
+let index = 0;
+const opinionContainer = document.getElementById('opinionContainer');
+const desarrolladoPorContainer = document.querySelector('.desarrollado-por');
+
+// Función para cambiar la opinión cada 5 segundos
+function cambiarOpinion() {
+    opinionContainer.innerHTML = `
+        <div class="opinion-img">
+            <img src="${opiniones[index].imagen}" alt="${opiniones[index].nombre}">
+        </div>
+        <div class="opinion-nombre">
+            <h2>${opiniones[index].nombre}</h2>
+            <p>${opiniones[index].comentario}</p>
+        </div>
+    `;
+    index = (index + 1) % opiniones.length; // Avanza al siguiente índice circularmente
 }
 
-objdatos = {
-  label: "USD OFicial",
-  data: [,680,1000], //Variacion de precios // Primer lugar vacio
-  borderColor: blue,
-  backgroundColor: lighblue,
-  borderWitdh: 1,
-  fill: false
+function rotarDesarrollador() {
+  desarrolladoPorContainer.innerHTML = `
+      <li>
+          <p><b>Desarrollado por:</b></p>
+          <p>${opiniones[index].nombre} (${legajos[index].legajo})</p>
+          <p>TUP 08 - 2024</p>
+      </li>
+  `;
+  index = (index + 1) % opiniones.length;
 }
-  datosLinea.push(objDatos);
-*/
+
+
+
+// Cambiar la opinión inicial
+cambiarOpinion();
+
+rotarDesarrollador();
+
+// Cambiar la opinión cada 5 segundos
+setInterval(cambiarOpinion, 5000);
+
+setInterval(rotarDesarrollador, 5000); // Rota el desarrollador cada 5 segundos
+
+
