@@ -66,8 +66,8 @@ tr {
 .contenedor-tabla-archivo {
     background-color: white;
     display: flex;
-    height: 100%;
     flex-direction: row;
+    
 }
 
 .titulo-archivo {
@@ -75,6 +75,7 @@ tr {
     width: 100%;
     justify-content: end;
     margin-left: 100px;
+    
 }
 
 .contenedor-impresora {
@@ -87,6 +88,7 @@ tr {
     display: flex;
     margin: 10px;
     padding: 10px;
+    
 }
 
 /*/TABLA DE COTIZACIONES/*/
@@ -99,7 +101,7 @@ tr {
     display: flex;
     flex-direction: column;
     flex: 3;
-    max-height: 27em;
+    max-height: 100vh;
     border-radius: 5px;
     width: 90%;
 }
@@ -168,3 +170,38 @@ td {
   .footer-lista ul li a {
     color: black;
   }
+
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+  
+    .nav-bar {
+        flex-direction: column;
+    }
+  
+    .lateral {
+        width: 100%;
+    }
+  
+    .opinion {
+        flex-direction: column;
+    }
+  
+    .opinion-img,
+    .opinion-nombre {
+        width: 100%;
+        text-align: center;
+    }
+  
+    header p {
+        font-size: 1.2em;
+    }
+  
+    .logo {
+        width: 30%;
+    }
+  }  

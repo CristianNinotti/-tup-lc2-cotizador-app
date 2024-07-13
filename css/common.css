@@ -277,6 +277,21 @@ footer {
     height: 100%;
 }
 
+.opinion-nombre p{
+    font-size: 15px;
+}
+.opinion-nombre h2{
+    font-size: 20px;
+}
+
+@media (max-width: 1366px){
+    .opinion-nombre p{
+        font-size: 10px;
+    }
+    .opinion-nombre h2{
+        font-size: 17px;
+    }
+}
 
 @media (max-width: 768px) {
     .contenedor-principal {
@@ -294,6 +309,14 @@ footer {
 
     .opinion {
         flex-direction: column;
+        
+    }
+
+    .opinion-nombre p{
+        font-size: 12px;
+    }
+    .opinion-nombre h2{
+        font-size: 15px;
     }
 
     .opinion-img,
@@ -328,12 +351,14 @@ footer {
 
     .opinion {
         flex-direction: column;
+        
     }
 
     .opinion-img,
     .opinion-nombre {
         width: 100%;
         text-align: center;
+        
     }
 
     header p {
@@ -344,3 +369,4 @@ footer {
         width: 30%;
     }
 }
+

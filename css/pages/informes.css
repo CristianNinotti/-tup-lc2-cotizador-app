@@ -69,6 +69,7 @@
 #combobox {
     width: 25em;
     height: 3em;
+
 }
 
 .icono-filtro {
@@ -249,7 +250,7 @@ td {
     align-items: center;
     justify-content: space-between;
     border-radius: 25px;
-    max-width: 75%;
+    width: 17em;
     max-height: 30%;
     padding: 1em;
     border: solid 1px #E3E3E3;
@@ -266,7 +267,7 @@ td {
 }
 
 #combobox {
-    width: 25em;
+    
     height: 3em;
 }
 
@@ -465,5 +466,25 @@ td {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media (min-width: 1366px){
+    .contenido-central {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        flex: 4;
+    }
+
+   .fila-cabecera td {
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+    padding-right: 0px;
+   }
+}
+
 
 

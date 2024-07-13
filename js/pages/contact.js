@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const message = formData.get('message');
 
         // Configuración del servicio de EmailJS
+<<<<<<< HEAD
         const serviceID = 'default_service'; // Aca va mi YOUR_SERVICE_ID  de EmailJS
+=======
+        const serviceID = 'service_qf8i4nj'; // Aca va mi YOUR_SERVICE_ID  de EmailJS
+>>>>>>> d97f5a5 (Correciones de errores para el profesor)
         const templateID = 'template_cqacrj7'; // Aca va mi YOUR_TEMPLATE_ID  de EmailJS
 
         // Objeto con los datos del email a enviar
