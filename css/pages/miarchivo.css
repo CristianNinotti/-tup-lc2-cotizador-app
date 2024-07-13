@@ -67,7 +67,6 @@ tr {
     background-color: white;
     display: flex;
     flex-direction: row;
-    
 }
 
 .titulo-archivo {
@@ -88,6 +87,7 @@ tr {
     display: flex;
     margin: 10px;
     padding: 10px;
+    height: 100%;
     
 }
 
@@ -101,7 +101,7 @@ tr {
     display: flex;
     flex-direction: column;
     flex: 3;
-    height:70%;
+    height:100%;
     border-radius: 5px;
     width: 90%;
 }
@@ -170,20 +170,6 @@ td {
   .footer-lista ul li a {
     color: black;
   }
-
-  @media (max-width: 1366px){
-    .tabla {
-        padding-top: 10px;
-        background-color: #DAE2F3;
-        display: flex;
-        flex-direction: column;
-        flex: 3;
-        height:70%;
-        border-radius: 5px;
-        width: 90%;
-    }
-  }
-
 
 
   /* Mobile */
