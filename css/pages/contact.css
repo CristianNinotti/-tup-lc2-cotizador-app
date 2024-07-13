@@ -274,7 +274,7 @@ label {
   .migas-pan {
     display: flex;
     justify-content: flex-end;
-    width: 80%;
+    width: 100%;
     height: 2em;
     border-radius: 30px;
     flex: 2;
