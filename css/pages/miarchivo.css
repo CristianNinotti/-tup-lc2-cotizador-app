@@ -101,7 +101,7 @@ tr {
     display: flex;
     flex-direction: column;
     flex: 3;
-    max-height: 100vh;
+    max-height:100%;
     border-radius: 5px;
     width: 90%;
 }
@@ -171,7 +171,21 @@ td {
     color: black;
   }
 
-  
+  @media (min-width: 1366px){
+    .tabla {
+        padding-top: 10px;
+        background-color: #DAE2F3;
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+        height:100%;
+        border-radius: 5px;
+        width: 90%;
+    }
+  }
+
+
+
   /* Mobile */
   @media (max-width: 480px) {
     .contenedor-principal {
