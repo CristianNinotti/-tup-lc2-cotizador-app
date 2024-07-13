@@ -101,7 +101,7 @@ tr {
     display: flex;
     flex-direction: column;
     flex: 3;
-    height:100%;
+    height:70%;
     border-radius: 5px;
     width: 90%;
 }
@@ -171,7 +171,7 @@ td {
     color: black;
   }
 
-  @media (min-width: 1366px){
+  @media (max-width: 1366px){
     .tabla {
         padding-top: 10px;
         background-color: #DAE2F3;
