@@ -620,7 +620,7 @@ compartirInfoLink.addEventListener("click", function (event) {
 });
 
 // Configuración de EmailJS
-emailjs.init("user_yourUserID"); // Reemplaza con tu USER_ID de EmailJS
+emailjs.init("-6cMJBOviHkGei8gT"); // Reemplaza con tu USER_ID de EmailJS
 
 // Manejo del envío del formulario
 const form = document.querySelector(".form");
@@ -634,8 +634,8 @@ form.addEventListener("submit", function (event) {
   const message = formData.get("mensaje");
 
   // Configuración del servicio de EmailJS
-  const serviceID = "your_service_id"; // Reemplaza con tu SERVICE_ID de EmailJS
-  const templateID = "your_template_id"; // Reemplaza con tu TEMPLATE_ID de EmailJS
+  const serviceID = "service_qf8i4nj"; // Reemplaza con tu SERVICE_ID de EmailJS
+  const templateID = "template_cqacrj7"; // Reemplaza con tu TEMPLATE_ID de EmailJS
 
   // Objeto con los datos del email a enviar
   const emailParams = {
