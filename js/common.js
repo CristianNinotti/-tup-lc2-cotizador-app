@@ -98,7 +98,6 @@ let arregloNuevo = []
 fetch("https://dolarapi.com/v1/dolares")
   .then(response => response.json())
   .then(dataDolar => {
-    console.log(dataDolar)  // Para ver el tipo de dato
     arregloNuevo = dataDolar;  // Arreglo nuevo
     return fetch("https://dolarapi.com/v1/cotizaciones/eur")
   })
