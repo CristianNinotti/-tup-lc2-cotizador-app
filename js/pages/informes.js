@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ordenar cotizaciones por fecha descendente
     cotizacionesFiltradas.sort(
-      (a, b) => new Date(b.fechaActualizacion) - new Date(a.fechaActualizacion)
+      (b, a) => new Date(a.fechaActualizacion) - new Date(b.fechaActualizacion)
     );
 
     // Crear filas en la tabla
@@ -111,43 +111,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para calcular el ícono de variación
   function calcularVariacionIcono(cotizaciones, index) {
-    if (index === 0 || !cotizaciones[index - 1]) {
-      return calcularVariacionIconoDirecto(cotizaciones[index]);
+    if (index === cotizaciones.length - 1) {
+      return "fa-circle"; // Última cotización (la más reciente), sin comparación previa
     }
 
     const cotizacionActual = cotizaciones[index];
-    const cotizacionAnterior = cotizaciones[index - 1];
+    const cotizacionSiguiente = cotizaciones[index + 1];
 
-    // Comparar la fecha para decidir si ha subido o bajado
+    // Comparar la venta para decidir si ha subido o bajado
     if (
-      cotizacionActual.fechaActualizacion >
-      cotizacionAnterior.fechaActualizacion
+      parseFloat(cotizacionActual.venta) > parseFloat(cotizacionSiguiente.venta)
     ) {
-      return "fa-circle-down"; // Subió
+      return "fa-circle-up"; // Subió
     } else if (
-      cotizacionActual.fechaActualizacion <
-      cotizacionAnterior.fechaActualizacion
+      parseFloat(cotizacionActual.venta) < parseFloat(cotizacionSiguiente.venta)
     ) {
-      return "fa-circle-up"; // Bajó
-    } else {
-      return calcularVariacionIconoDirecto(cotizaciones[index]);
-    }
-  }
-
-  function calcularVariacionIconoDirecto(cotizacion) {
-    const variacion =
-      parseFloat(cotizacion.venta) - parseFloat(cotizacion.compra);
-    if (variacion > 0.0) {
-      return "fa-circle-down"; // Subió
-    } else if (variacion < 0) {
-      return "fa-circle-up"; // Bajó
-    } else if ((variacion = 0)) {
-      return "fa-circle";
+      return "fa-circle-down"; // Bajó
     } else {
       return "fa-circle"; // Sin cambios
     }
   }
-
   // Función para formatear la fecha
   function formatoFecha(fecha) {
     const fechaObj = new Date(fecha);
@@ -170,130 +153,129 @@ document.addEventListener("DOMContentLoaded", function () {
     return color;
   }
 
-  // Función para actualizar el gráfico cuando se selecciona "Seleccionar todos"
-  function actualizarGraficoNull(nombreMoneda) {
-    if (chart) {
-      chart.destroy();
+// Función para actualizar el gráfico cuando se selecciona "Seleccionar todos"
+function actualizarGraficoNull(nombreMoneda) {
+  if (chart) {
+    chart.destroy();
+  }
+
+  // Filtrar y ordenar cotizaciones por fecha ascendente
+  const cotizacionesFiltradas = cotizaciones.sort(
+    (a, b) => new Date(a.fechaActualizacion) - new Date(b.fechaActualizacion)
+  );
+
+  const labels = [];
+  const dataCompra = [];
+  const dataVariacion = [];
+  const backgroundColors = [];
+  const borderColors = [];
+
+  // Obtener todas las monedas disponibles
+  const monedasDisponibles = Array.from(
+    new Set(cotizaciones.map((cotizacion) => cotizacion.nombre))
+  );
+
+  // Procesar cada moneda
+  monedasDisponibles.forEach((moneda) => {
+    labels.push(moneda);
+
+    // Filtrar las cotizaciones solo para la moneda actual y ordenar por fecha
+    const cotizacionesMoneda = cotizacionesFiltradas.filter(
+      (c) => c.nombre === moneda
+    );
+
+    // Obtener la compra más reciente
+    const compraActual =
+      typeof cotizacionesMoneda[0]?.compra === "string"
+        ? parseFloat(
+            cotizacionesMoneda[0].compra.replace("$", "").replace(",", ".")
+          )
+        : cotizacionesMoneda[0]?.compra || 0;
+
+    // Obtener la compra más antigua (si existe)
+    let compraAnterior = 0;
+    if (cotizacionesMoneda.length > 1) {
+      compraAnterior =
+        typeof cotizacionesMoneda[cotizacionesMoneda.length - 1]?.compra ===
+        "string"
+          ? parseFloat(
+              cotizacionesMoneda[cotizacionesMoneda.length - 1].compra
+                .replace("$", "")
+                .replace(",", ".")
+            )
+          : cotizacionesMoneda[cotizacionesMoneda.length - 1]?.compra || 0;
     }
 
-    // Filtrar y ordenar cotizaciones por fecha ascendente
-    const cotizacionesFiltradas = cotizaciones.sort(
-      (b, a) => new Date(a.fechaActualizacion) - new Date(b.fechaActualizacion)
-    );
+    // Calcular la variación
+    const variacion = compraAnterior - compraActual;
+    dataCompra.push(compraActual);
+    dataVariacion.push(variacion);
 
-    const labels = [];
-    const dataCompra = [];
-    const dataVariacion = [];
-    const backgroundColors = [];
-    const borderColors = [];
+    const color = getRandomColor();
+    backgroundColors.push(color);
+    borderColors.push(color);
+  });
 
-    // Obtener todas las monedas disponibles
-    const monedasDisponibles = Array.from(
-      new Set(cotizaciones.map((cotizacion) => cotizacion.nombre))
-    );
-
-    // Asignar colores únicos a cada moneda y obtener los valores de compra y variación
-    monedasDisponibles.forEach((moneda) => {
-      labels.push(moneda);
-
-      const cotizacionesMoneda = cotizacionesFiltradas.filter(
-        (c) => c.nombre === moneda
-      );
-      if (cotizacionesMoneda.length > 0) {
-        const compraActual =
-          typeof cotizacionesMoneda[0].compra === "string"
-            ? parseFloat(
-                cotizacionesMoneda[0].compra.replace("$", "").replace(",", ".")
-              )
-            : cotizacionesMoneda[0].compra;
-        dataCompra.push(compraActual);
-
-        // Calcular la variación si hay datos anteriores
-        if (cotizacionesMoneda.length > 1) {
-          const compraAnterior =
-            typeof cotizacionesMoneda[1].compra === "string"
-              ? parseFloat(
-                  cotizacionesMoneda[1].compra
-                    .replace("$", "")
-                    .replace(",", ".")
-                )
-              : cotizacionesMoneda[1].compra;
-          const variacion = compraActual - compraAnterior;
-          dataVariacion.push(variacion);
-        } else {
-          dataVariacion.push(0); // Si no hay cotización anterior, variación es 0
-        }
-
-        const color = getRandomColor();
-        backgroundColors.push(color);
-        borderColors.push(color);
-      } else {
-        dataCompra.push(0); // Si no hay cotización para la moneda, poner 0
-        dataVariacion.push(0);
-        const color = getRandomColor();
-        backgroundColors.push(color);
-        borderColors.push(color);
-      }
-    });
-
-    chart = new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: "Precio de Compra",
-            data: dataCompra,
-            backgroundColor: backgroundColors,
-            borderColor: borderColors,
-            borderWidth: 1,
+  // Crear el gráfico usando Chart.js
+  chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Precio de Compra",
+          data: dataCompra,
+          backgroundColor: backgroundColors,
+          borderColor: borderColors,
+          borderWidth: 1,
+        },
+        {
+          label: "Variación",
+          data: dataVariacion,
+          backgroundColor: backgroundColors.map((color) =>
+            hexToRGBA(color, 0.5)
+          ),
+          borderColor: borderColors,
+          borderWidth: 1,
+          type: "line", // Mostrar variaciones como línea sobre las barras
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: "Precio de Compra y Variación por Moneda",
+          font: {
+            size: 10,
           },
-          {
-            label: "Variación",
-            data: dataVariacion,
-            backgroundColor: backgroundColors.map((color) =>
-              hexToRGBA(color, 0.5)
-            ),
-            borderColor: borderColors,
-            borderWidth: 1,
-            type: "line", // Mostrar variaciones como línea sobre las barras
-          },
-        ],
+        },
       },
-      options: {
-        plugins: {
+      scales: {
+        y: {
+          beginAtZero: true,
           title: {
             display: true,
-            text: "Precio de Compra y Variación por Moneda",
-            font: {
-              size: 20,
-            },
+            text: "Precios de compra",
+          },
+          ticks: {
+            stepSize: 15,
           },
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: "Precios",
-            },
-            ticks: {
-              stepSize: 20,
-            },
+        x: {
+          title: {
+            display: true,
+            text: "Monedas",
           },
-          x: {
-            title: {
-              display: true,
-              text: "Monedas",
-            },
-            ticks: {
-              autoSkip: false,
-            },
+          ticks: {
+            autoSkip: false,
           },
         },
       },
-    });
-  }
+    },
+  });
+}
+
 
   // Función para obtener un color aleatorio
   function getRandomColor() {
@@ -359,6 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
             backgroundColor: "rgba(54, 162, 235, 0.2)",
             borderColor: "rgba(54, 162, 235, 1)",
             borderWidth: 1,
+            tension: 0.4, // Ajusta la tensión para suavizar las líneas
           },
           {
             label: `Venta de ${nombreMoneda}`,
@@ -366,6 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
             borderWidth: 1,
+            tension: 0.4, // Ajusta la tensión para suavizar las líneas
           },
         ],
       },
@@ -401,109 +385,136 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Evento change del combobox para cargar las cotizaciones correspondientes
+  // Event listener para el cambio de selección en el combobox
   comboBox.addEventListener("change", function () {
-    const nombreMoneda = this.value;
-    cargarCotizaciones(nombreMoneda);
+    const nombreMonedaSeleccionada = comboBox.value;
+    cargarCotizaciones(nombreMonedaSeleccionada);
   });
 
-  // Evento al hacer clic en el icono de filtro
-  const iconoFiltro = document.querySelector(".fa-solid.fa-filter");
-  if (iconoFiltro) {
-    iconoFiltro.addEventListener("click", function () {
-      const monedaSeleccionada = comboBox.value;
-      cargarCotizaciones(monedaSeleccionada);
+// Función para abrir la modal y llenar el mensaje con datos de la tabla
+const abrirModal = () => {
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
+
+  // Llenar el campo de mensaje con datos de la tabla
+  const mensaje = obtenerDatosTablaComoMensaje();
+  const mensajeInput = document.getElementById("mensaje");
+  if (mensajeInput) {
+    mensajeInput.value = mensaje;
+  }
+
+  // Agregar un evento para cerrar la modal al hacer clic fuera de ella
+  window.addEventListener("click", outsideClick);
+
+  // Agregar evento para cerrar la modal al hacer clic en la cruz (X)
+  const cerrarSpan = document.querySelector(".close");
+  cerrarSpan.addEventListener("click", closeModal);
+
+  // Evento para cerrar la modal al hacer clic en el botón "Cerrar"
+  const cerrarModalBtn = document.getElementById("cerrarModal");
+  cerrarModalBtn.addEventListener("click", closeModal);
+};
+
+// Función para cerrar la modal
+const closeModal = () => {
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+
+  // Remover eventos al cerrar la modal
+  window.removeEventListener("click", outsideClick);
+  const cerrarSpan = document.querySelector(".close");
+  cerrarSpan.removeEventListener("click", closeModal);
+};
+
+// Función para cerrar la modal si se hace clic fuera de ella
+const outsideClick = (event) => {
+  const modal = document.getElementById("modal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+// Función para obtener los datos de la tabla como mensaje formateado
+const obtenerDatosTablaComoMensaje = () => {
+  const tabla = document.querySelector(".tabla tbody");
+  let mensaje = "Datos de la tabla:\n";
+
+  if (tabla) {
+    const filas = tabla.querySelectorAll(".fila-contenido-moneda");
+
+    filas.forEach((fila, index) => {
+      const moneda = fila.querySelector(".columna-moneda").textContent;
+      const fecha = fila.querySelector(".columna-fecha").textContent;
+      const compra = fila.querySelector(".columna-compra").textContent;
+      const venta = fila.querySelector(".columna-venta").textContent;
+      let variacion = fila.querySelector(".columna-variacion i").classList[1].replace("fa-", "");
+
+      // Interpretar la variación según el ícono
+      let mensajeVariacion = "";
+      if (variacion === "circle-up") {
+        mensajeVariacion = "Subió";
+      } else if (variacion === "circle-down") {
+        mensajeVariacion = "Bajó";
+      } else {
+        mensajeVariacion = "No Varió";
+      }
+
+      // Formatear partes del mensaje en negrita y mayúscula
+      mensaje += `\n${index + 1}. *MONEDA*: ${moneda.toUpperCase()}, *FECHA*: ${fecha.toUpperCase()}, *COMPRA*: ${compra.toUpperCase()}, *VENTA*: ${venta.toUpperCase()}, *VARIACIÓN*: ${mensajeVariacion}`;
     });
   }
 
-  // Función para abrir la modal
-  const abrirModal = () => {
-    const modal = document.getElementById("modal");
-    modal.style.display = "block";
+  return mensaje;
+};
 
-    // Agregar un evento para cerrar la modal al hacer clic fuera de ella
-    window.addEventListener("click", outsideClick);
+// Evento para abrir la modal al hacer clic en el enlace
+const compartirInfoLink = document.querySelector(".mail .Texto-info");
+compartirInfoLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  abrirModal();
+});
 
-    // Agregar evento para cerrar la modal al hacer clic en la cruz (X)
-    const cerrarSpan = document.querySelector("span.close");
-    cerrarSpan.addEventListener("click", closeModal);
+// Configuración de EmailJS
+emailjs.init("user_yourUserID"); // Reemplaza con tu USER_ID de EmailJS
 
-    // Evento para cerrar la modal al hacer clic en el botón "Cerrar"
-    const cerrarModalBtn = document.getElementById("cerrarModal");
-    cerrarModalBtn.addEventListener("click", closeModal);
+// Manejo del envío del formulario
+const form = document.querySelector(".form");
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+  // Recolectar datos del formulario
+  const formData = new FormData(form);
+  const name = formData.get("nombre");
+  const email = formData.get("email");
+  const message = formData.get("mensaje");
+
+  // Configuración del servicio de EmailJS
+  const serviceID = "your_service_id"; // Reemplaza con tu SERVICE_ID de EmailJS
+  const templateID = "your_template_id"; // Reemplaza con tu TEMPLATE_ID de EmailJS
+
+  // Objeto con los datos del email a enviar
+  const emailParams = {
+    to: "hgerardo@gmail.com, sbruselario@gmail.com", // Direcciones separadas por coma
+    from_name: name,
+    from_email: email,
+    message: message,
   };
 
-  // Función para cerrar la modal
-  const closeModal = () => {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
-
-    // Remover eventos al cerrar la modal
-    window.removeEventListener("click", outsideClick);
-    const cerrarSpan = document.querySelector("span.close");
-    cerrarSpan.removeEventListener("click", closeModal);
-  };
-
-  // Función para cerrar la modal si se hace clic fuera de ella
-  const outsideClick = (event) => {
-    const modal = document.getElementById("modal");
-    if (event.target === modal) {
-      closeModal();
+  // Envío del email utilizando EmailJS
+  emailjs.send(serviceID, templateID, emailParams).then(
+    function () {
+      alert("Email enviado correctamente.");
+      form.reset(); // Limpia el formulario después del envío exitoso
+      closeModal(); // Cierra la modal después de enviar el email
+    },
+    function (error) {
+      console.error("Error al enviar el email:", error);
+      alert("Hubo un problema al enviar el email. Por favor, inténtelo más tarde.");
     }
-  };
-
-  // Evento para abrir la modal al hacer clic en el enlace
-  const compartirInfoLink = document.querySelector(".mail .Texto-info");
-  compartirInfoLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    abrirModal();
-  });
-  const form = document.querySelector(".form");
-  // Configuración de EmailJS
-  emailjs.init("hvwQ-bV8E0i3YrkrW"); // Aca va mi YOUR_USER_ID  de EmailJS
-
-  // Manejo del envío del formulario
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-    // Recolectar datos del formulario
-    const formData = new FormData(form);
-    const name = formData.get("nombre");
-    const email = formData.get("email");
-    const message = formData.get("mensaje");
-
-    // Configuración del servicio de EmailJS
-    const serviceID = "service_15etgsb"; // Aca va mi YOUR_SERVICE_ID  de EmailJS
-    const templateID = "template_72s4h35"; // Aca va mi YOUR_TEMPLATE_ID  de EmailJS
-
-    // Objeto con los datos del email a enviar
-    const emailParams = {
-      to: "hgerardo@gmail.com, sbruselario@gmail.com", // Direcciones separadas por coma
-      from_name: name,
-      from_email: email,
-      message: message,
-    };
-
-    // Envío del email utilizando EmailJS
-    emailjs.send(serviceID, templateID, emailParams).then(
-      function () {
-        alert("Email enviado correctamente.");
-        form.reset(); // Limpio el formulario después del envío exitoso
-      },
-      function (error) {
-        console.error("Error al enviar el email:", error);
-        alert(
-          "Hubo un problema al enviar el email. Por favor, inténtelo más tarde."
-        );
-      }
-    );
-  });
-
-  // Cargar las cotizaciones por defecto al cargar la página
-  cargarCotizaciones("Seleccionar todos");
+  );
 });
 
 
-
-
-
+  // Cargar cotizaciones al cargar la página
+  cargarCotizaciones("Seleccionar todos");
+});

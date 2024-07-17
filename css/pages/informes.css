@@ -1,204 +1,3 @@
-/*
-.link-inicio-migas {
-    color: black;
-}
-
-.fa-file {
-    color: rgb(255, 217, 101);
-}
-
-/* General container*/
-/*
-.contenedor-general {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 100%;
-}
-
-.div-superior {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex: 1;
-}
-
-.div-superior-izquierda {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    margin: 10px;
-    align-items: start;
-}
-
-.div-superior-derecha {
-    display: flex;
-    flex: 1;
-    padding-left: 1em;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-.img-grafica {
-    max-width: 75%;
-    max-height: 100%;
-}
-
-.filtro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 25px;
-    max-width: 75%;
-    max-height: 30%;
-    padding: 1em;
-    border: solid 1px #E3E3E3;
-    background-color: #F2F2F2;
-    gap: 0.30em;
-    flex: 2;
-}
-
-.label {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 0.30em;
-}
-
-#combobox {
-    width: 25em;
-    height: 3em;
-
-}
-
-.icono-filtro {
-    display: flex;
-    align-items: center;
-    color: #C55A11;
-    font-size: 2.5em;
-    padding-left: 0.5em;
-    margin-top: 0.45em;
-}
-
-.mail {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    align-items: flex-end;
-    font-size: 3em;
-    padding-top: 0px;
-    padding-bottom: 10px;
-}
-
-.fa-envelope-open-text {
-    color: #AABEFF;
-}
-
-.Texto-info {
-    font-size: 15px;
-    color: black;
-}
-
-.fa-circle-up {
-    color: green;
-}
-
-.fa-circle-down {
-    color: red;
-}
-
-.div-inferior {
-    display: flex;
-    flex: 1;
-    max-width: 100%;
-}
-*/
-/* Estilos para la tabla */
-/*
-.tabla {
-    background-color: #DAE2F3;
-    display: flex;
-    flex-direction: column;
-    flex: 3;
-    max-height: 15em;
-    border-radius: 15px;
-    width: 100%;
-}
-
-thead {
-    display: flex;
-}
-
-tbody {
-    padding-top: 15px;
-    background-color: white;
-    overflow: auto;
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    padding-bottom: 1em;
-}
-
-.foot-tabla {
-    height: 2em;
-    background-color: #DAE2F3;
-    border-radius: 25px;
-}
-
-.fila-cabecera {
-    display: flex;
-    height: 2em;
-    align-items: center;
-    width: 100%;
-}
-
-.fila-cabecera td {
-    text-align: center;
-    padding-right: 8em;
-}
-
-.fila {
-    text-align: left;
-    display: flex;
-    padding: 3px 0px;
-}
-
-th {
-    display: flex;
-    border-radius: 5px;
-    flex: 1;
-    justify-content: flex-start;
-}
-
-td {
-    border-radius: 5px;
-    flex: 1;
-}
-
-.moneda {
-    display: flex;
-    color: blue;
-    background-color: #F2F2F2;
-    height: 2em;
-    align-items: center;
-    padding-left: 2em;
-}
-
-.fila-contenido-moneda {
-    display: flex;
-}
-
-.footer-lista ul li a:visited {
-    color: black;
-  }
-  
-  .footer-lista ul li a {
-    color: black;
-  }
-
-  */
-
-
 
 .link-inicio-migas {
     color: black;
@@ -424,10 +223,6 @@ td {
     color: black;
 }
 
-
-
-
-
 /* Estilos existentes */
 
 /* Estilos para el modal */
@@ -448,8 +243,7 @@ td {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 28em;
+    width: 65%;
     border-radius: 2em;
 }
 
@@ -467,7 +261,7 @@ td {
     cursor: pointer;
 }
 
-@media (min-width: 1366px){
+@media (max-width: 1366px){
     .contenido-central {
         width: 50%;
         height: 100%;
@@ -484,7 +278,19 @@ td {
     padding-left: 0px;
     padding-right: 0px;
    }
+   .modal-content {
+    background-color: yellow;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 2em;
 }
+
+
+}
+
+
 
 
 
