@@ -635,13 +635,12 @@ form.addEventListener("submit", function (event) {
 
   // Configuración del servicio de EmailJS
   const serviceID = "service_qf8i4nj"; // Reemplaza con tu SERVICE_ID de EmailJS
-  const templateID = "template_cqacrj7"; // Reemplaza con tu TEMPLATE_ID de EmailJS
+  const templateID = "template_604veue"; // Reemplaza con tu TEMPLATE_ID de EmailJS
 
   // Objeto con los datos del email a enviar
   const emailParams = {
-    to: "hgerardo@gmail.com, sbruselario@gmail.com", // Direcciones separadas por coma
+    to: email, // Direcciones separadas por coma
     from_name: name,
-    from_email: email,
     message: message,
   };
 
