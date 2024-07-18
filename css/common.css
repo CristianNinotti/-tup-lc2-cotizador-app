@@ -286,10 +286,10 @@ footer {
 
 @media (max-width: 1366px){
     .opinion-nombre p{
-        font-size: 10px;
+        font-size: 1em;
     }
     .opinion-nombre h2{
-        font-size: 17px;
+        font-size: 2em;
     }
 }
 
