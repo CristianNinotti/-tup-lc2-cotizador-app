@@ -153,148 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return color;
   }
 
-/* // Función para actualizar el gráfico cuando se selecciona "Seleccionar todos"
-function actualizarGraficoNull(nombreMoneda) {
-  if (chart) {
-    chart.destroy();
-  }
-
-  // Filtrar y ordenar cotizaciones por fecha ascendente
-  const cotizacionesFiltradas = cotizaciones.sort(
-    (a, b) => new Date(a.fechaActualizacion) - new Date(b.fechaActualizacion)
-  );
-
-  const labels = [];
-  const dataCompra = [];
-  const dataVariacion = [];
-  const backgroundColors = [];
-  const borderColors = [];
-
-  // Obtener todas las monedas disponibles
-  const monedasDisponibles = Array.from(
-    new Set(cotizaciones.map((cotizacion) => cotizacion.nombre))
-  );
-
-  // Procesar cada moneda
-  monedasDisponibles.forEach((moneda) => {
-    labels.push(moneda);
-
-    // Filtrar las cotizaciones solo para la moneda actual y ordenar por fecha
-    const cotizacionesMoneda = cotizacionesFiltradas.filter(
-      (c) => c.nombre === moneda
-    );
-
-    // Obtener la compra más reciente
-    const compraActual =
-      typeof cotizacionesMoneda[0]?.compra === "string"
-        ? parseFloat(
-            cotizacionesMoneda[0].compra.replace("$", "").replace(",", ".")
-          )
-        : cotizacionesMoneda[0]?.compra || 0;
-
-    // Obtener la compra más antigua (si existe)
-    let compraAnterior = 0;
-    if (cotizacionesMoneda.length > 1) {
-      compraAnterior =
-        typeof cotizacionesMoneda[cotizacionesMoneda.length - 1]?.compra ===
-        "string"
-          ? parseFloat(
-              cotizacionesMoneda[cotizacionesMoneda.length - 1].compra
-                .replace("$", "")
-                .replace(",", ".")
-            )
-          : cotizacionesMoneda[cotizacionesMoneda.length - 1]?.compra || 0;
-    }
-
-    // Calcular la variación
-    const variacion = compraAnterior - compraActual;
-    dataCompra.push(compraActual);
-    dataVariacion.push(variacion);
-
-    const color = getRandomColor();
-    backgroundColors.push(color);
-    borderColors.push(color);
-  });
-
-  // Crear el gráfico usando Chart.js
-  chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: "Precio de Compra",
-          data: dataCompra,
-          backgroundColor: backgroundColors,
-          borderColor: borderColors,
-          borderWidth: 1,
-        },
-        {
-          label: "Variación",
-          data: dataVariacion,
-          backgroundColor: backgroundColors.map((color) =>
-            hexToRGBA(color, 0.5)
-          ),
-          borderColor: borderColors,
-          borderWidth: 1,
-          type: "line", // Mostrar variaciones como línea sobre las barras
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        title: {
-          display: true,
-          text: "Precio de Compra y Variación por Moneda",
-          font: {
-            size: 10,
-          },
-        },
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: {
-            display: true,
-            text: "Precios de compra",
-          },
-          ticks: {
-            stepSize: 15,
-          },
-        },
-        x: {
-          title: {
-            display: true,
-            text: "Monedas",
-          },
-          ticks: {
-            autoSkip: false,
-          },
-        },
-      },
-    },
-  });
-}
-
-
-  // Función para obtener un color aleatorio
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-  // Función para convertir color hexadecimal a rgba con transparencia
-  function hexToRGBA(hex, alpha) {
-    let r = parseInt(hex.slice(1, 3), 16);
-    let g = parseInt(hex.slice(3, 5), 16);
-    let b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  }
-  */
 // Función para actualizar el gráfico cuando se selecciona "Seleccionar todos"
 function actualizarGraficoNull(nombreMoneda) {
   if (chart) {
@@ -303,7 +161,7 @@ function actualizarGraficoNull(nombreMoneda) {
 
   // Filtrar y ordenar cotizaciones por fecha ascendente
   const cotizacionesFiltradas = cotizaciones.sort(
-    (a, b) => new Date(a.fechaActualizacion) - new Date(b.fechaActualizacion)
+    (a, b) => new Date(b.fechaActualizacion) - new Date(a.fechaActualizacion)
   );
 
   const labels = [];
@@ -349,7 +207,7 @@ function actualizarGraficoNull(nombreMoneda) {
                 .replace(",", ".")
             )
           : cotizacionesMoneda[cotizacionesMoneda.length - 1]?.compra || 0;
-      variacion = compraAnterior - compraActual;
+      variacion = compraActual - compraAnterior;
     }
 
     // Añadir datos a los arrays correspondientes
